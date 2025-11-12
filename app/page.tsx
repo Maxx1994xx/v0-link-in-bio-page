@@ -3,7 +3,14 @@ import { CheckCircle2 } from "lucide-react"
 const offers = Array.from({ length: 10 }, (_, i) => ({
   id: i + 1,
   label: `Offer ${i + 1}`,
-  url: "#",
+  url:
+    i < 3
+      ? i === 0
+        ? "https://otieu.com/4/9674325"
+        : i === 1
+          ? "https://www.effectivegatecpm.com/xkht63dr?key=046ee4c3d3aa667e5afa96332e28f85c"
+          : "https://viiukuhe.com/dc/?blockID=382513&tb=https%3A%2F%2Fotieu.com%2F"
+      : null,
 }))
 
 export default function LinkTreePage() {
@@ -42,17 +49,20 @@ export default function LinkTreePage() {
         <h2 className="text-base sm:text-lg font-bold text-center mb-4">Offer Wall</h2>
 
         <div className="space-y-1.5 sm:space-y-2">
-          {offers.map((offer) => (
-            <a
-              key={offer.id}
-              href={offer.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full py-3.5 sm:py-3 px-3 sm:px-4 bg-black text-white font-semibold text-sm sm:text-base text-center rounded hover:bg-gray-800 active:bg-gray-900 transition-colors"
-            >
-              {offer.label}
-            </a>
-          ))}
+          {offers.map(
+            (offer) =>
+              offer.url && (
+                <a
+                  key={offer.id}
+                  href={offer.url}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="block w-full py-3.5 sm:py-3 px-3 sm:px-4 bg-black text-white font-semibold text-sm sm:text-base text-center rounded hover:bg-gray-800 active:bg-gray-900 transition-colors"
+                >
+                  {offer.label}
+                </a>
+              ),
+          )}
         </div>
 
         {/* Footer */}
