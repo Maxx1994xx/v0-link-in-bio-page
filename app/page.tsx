@@ -1,4 +1,4 @@
-import { CheckCircle2 } from "lucide-react"
+import { CheckCircle2 } from 'lucide-react'
 
 const offers = Array.from({ length: 10 }, (_, i) => ({
   id: i + 1,
@@ -10,7 +10,9 @@ const offers = Array.from({ length: 10 }, (_, i) => ({
         : i === 1
           ? "https://www.effectivegatecpm.com/xkht63dr?key=046ee4c3d3aa667e5afa96332e28f85c"
           : "https://viiukuhe.com/dc/?blockID=382513&tb=https%3A%2F%2Fotieu.com%2F"
-      : null,
+      : i === 3
+        ? "/offer-4" // added internal link for offer 4
+        : null,
 }))
 
 export default function LinkTreePage() {
