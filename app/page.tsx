@@ -52,7 +52,15 @@ export default function LinkTreePage() {
 
   return (
     <div className="min-h-screen bg-white text-black flex flex-col items-center justify-start sm:justify-center p-3 sm:p-4 safe-area-inset">
-      <div className="w-full max-w-sm">
+      <div className="fixed top-0 left-0 right-0 z-50 flex justify-center bg-white">
+        <div id="container-928f1bf7996b81188f31efac647ef4de"></div>
+      </div>
+
+      <div className="fixed bottom-0 left-0 right-0 z-50 flex justify-center bg-white">
+        <div id="container-928f1bf7996b81188f31efac647ef4de-bottom"></div>
+      </div>
+
+      <div className="w-full max-w-sm pt-32 pb-32">
         <div className="text-center mb-4 mt-6 sm:mt-0">
           <div className="flex items-center justify-center gap-2 mb-2">
             <h1 className="text-2xl sm:text-3xl font-black leading-tight">Free Trading Signals</h1>
@@ -64,8 +72,8 @@ export default function LinkTreePage() {
         {/* Divider */}
         <div className="h-px bg-black my-5 sm:my-6" />
 
-        <div className="my-4 flex justify-center">
-          <div id="container-928f1bf7996b81188f31efac647ef4de"></div>
+        <div className="my-6 flex justify-center">
+          <div id="container-27cc1a9d5664a7106fe4a351e661f8da"></div>
         </div>
 
         <a
@@ -113,11 +121,6 @@ export default function LinkTreePage() {
                 )
               ) : null,
           )}
-        </div>
-
-        {/* Adsterra native banner */}
-        <div className="my-6 flex justify-center">
-          <div id="container-27cc1a9d5664a7106fe4a351e661f8da"></div>
         </div>
 
         {/* Footer */}
