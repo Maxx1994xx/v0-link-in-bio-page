@@ -6,32 +6,34 @@ import { useEffect } from 'react'
 
 export default function Offer13Page() {
   useEffect(() => {
-    const script = document.createElement('script')
-    script.src = '//pl28061922.effectivegatecpm.com/27cc1a9d5664a7106fe4a351e661f8da/invoke.js'
-    script.async = true
-    script.setAttribute('data-cfasync', 'false')
-    document.body.appendChild(script)
-  }, [])
+    const timer = setTimeout(() => {
+      const script1 = document.createElement('script')
+      script1.src = '//pl28061922.effectivegatecpm.com/27cc1a9d5664a7106fe4a351e661f8da/invoke.js'
+      script1.async = true
+      script1.setAttribute('data-cfasync', 'false')
+      document.body.appendChild(script1)
 
-  useEffect(() => {
-    const script = document.createElement('script')
-    script.type = 'text/javascript'
-    script.innerHTML = `
-      window.atOptions = {
-        'key' : '928f1bf7996b81188f31efac647ef4de',
-        'format' : 'iframe',
-        'height' : 90,
-        'width' : 728,
-        'params' : {}
-      };
-    `
-    document.head.appendChild(script)
+      const script2 = document.createElement('script')
+      script2.type = 'text/javascript'
+      script2.innerHTML = `
+        window.atOptions = {
+          'key' : '928f1bf7996b81188f31efac647ef4de',
+          'format' : 'iframe',
+          'height' : 90,
+          'width' : 728,
+          'params' : {}
+        };
+      `
+      document.body.appendChild(script2)
 
-    const script2 = document.createElement('script')
-    script2.type = 'text/javascript'
-    script2.src = '//www.highperformanceformat.com/928f1bf7996b81188f31efac647ef4de/invoke.js'
-    script2.async = true
-    document.head.appendChild(script2)
+      const script3 = document.createElement('script')
+      script3.type = 'text/javascript'
+      script3.src = '//www.highperformanceformat.com/928f1bf7996b81188f31efac647ef4de/invoke.js'
+      script3.async = true
+      document.body.appendChild(script3)
+    }, 100)
+
+    return () => clearTimeout(timer)
   }, [])
 
   return (
