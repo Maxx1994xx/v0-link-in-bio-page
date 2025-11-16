@@ -1,4 +1,8 @@
+'use client'
+
 import { CheckCircle2 } from 'lucide-react'
+import Link from 'next/link'
+import { useEffect } from 'react'
 
 const offers = Array.from({ length: 10 }, (_, i) => ({
   id: i + 1,
@@ -10,10 +14,40 @@ const offers = Array.from({ length: 10 }, (_, i) => ({
         : i === 1
           ? "https://www.effectivegatecpm.com/xkht63dr?key=046ee4c3d3aa667e5afa96332e28f85c"
           : "https://viiukuhe.com/dc/?blockID=382513&tb=https%3A%2F%2Fotieu.com%2F"
-      : null, // removed offer 4 internal link
+      : null,
+  isPage: i >= 3, // offers 4-10 are now separate pages
 }))
 
 export default function LinkTreePage() {
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.src = '//pl28061922.effectivegatecpm.com/27cc1a9d5664a7106fe4a351e661f8da/invoke.js'
+    script.async = true
+    script.setAttribute('data-cfasync', 'false')
+    document.body.appendChild(script)
+  }, [])
+
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.type = 'text/javascript'
+    script.innerHTML = `
+      window.atOptions = {
+        'key' : '928f1bf7996b81188f31efac647ef4de',
+        'format' : 'iframe',
+        'height' : 90,
+        'width' : 728,
+        'params' : {}
+      };
+    `
+    document.head.appendChild(script)
+
+    const script2 = document.createElement('script')
+    script2.type = 'text/javascript'
+    script2.src = '//www.highperformanceformat.com/928f1bf7996b81188f31efac647ef4de/invoke.js'
+    script2.async = true
+    document.head.appendChild(script2)
+  }, [])
+
   return (
     <div className="min-h-screen bg-white text-black flex flex-col items-center justify-start sm:justify-center p-3 sm:p-4 safe-area-inset">
       <div className="w-full max-w-sm">
@@ -27,6 +61,10 @@ export default function LinkTreePage() {
 
         {/* Divider */}
         <div className="h-px bg-black my-5 sm:my-6" />
+
+        <div className="my-4 flex justify-center">
+          <div id="container-928f1bf7996b81188f31efac647ef4de"></div>
+        </div>
 
         <a
           href="https://one.exnessonelink.com/a/c_d797k8g5o6"
@@ -51,18 +89,33 @@ export default function LinkTreePage() {
         <div className="space-y-1.5 sm:space-y-2">
           {offers.map(
             (offer) =>
-              offer.url && (
-                <a
-                  key={offer.id}
-                  href={offer.url}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="block w-full py-3.5 sm:py-3 px-3 sm:px-4 bg-black text-white font-semibold text-sm sm:text-base text-center rounded hover:bg-gray-800 active:bg-gray-900 transition-colors"
-                >
-                  {offer.label}
-                </a>
-              ),
+              offer.url || offer.isPage ? (
+                offer.isPage ? (
+                  <Link
+                    key={offer.id}
+                    href={`/offer-${offer.id}`}
+                    className="block w-full py-3.5 sm:py-3 px-3 sm:px-4 bg-black text-white font-semibold text-sm sm:text-base text-center rounded hover:bg-gray-800 active:bg-gray-900 transition-colors"
+                  >
+                    {offer.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={offer.id}
+                    href={offer.url}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="block w-full py-3.5 sm:py-3 px-3 sm:px-4 bg-black text-white font-semibold text-sm sm:text-base text-center rounded hover:bg-gray-800 active:bg-gray-900 transition-colors"
+                  >
+                    {offer.label}
+                  </a>
+                )
+              ) : null,
           )}
+        </div>
+
+        {/* Adsterra native banner */}
+        <div className="my-6 flex justify-center">
+          <div id="container-27cc1a9d5664a7106fe4a351e661f8da"></div>
         </div>
 
         {/* Footer */}
